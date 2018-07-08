@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center mt-5">{{ name }}'s Todo List</h1>
+    </div>
+  </div>
+  <p *ngFor="let chore of todos" >
+    {{ chore }} <i class="fas fa-pencil-alt" (click)="editTodo(chore)"></i>
+  </p>
+ 
+  <div class="row">
+    <div class="col">
+      <input [(ngModel)]="todoInput">
+      <button class="btn btn-danger" (keydown)="handleKeyDown($event)" (click)="createTodo()">Click to see what I typed in</button>
+    </div>
+  </div>
+ </div>
+
