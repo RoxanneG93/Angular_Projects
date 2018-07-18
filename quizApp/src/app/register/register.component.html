@@ -1,0 +1,22 @@
+<!-- Supposed to be styled with Materialize Aint nobody got time for dat -->
+
+<div class="card">
+  <h2>Quiz Registration</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="input-feild col s12">
+        icon goes here
+        <input type="text" name="Name" #Name ngModel required>
+        <label>Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-feild col s12">
+        Email goes here
+        <input type="text" name="Name" #Email ngModel required>
+        <label>Email</label>
+      </div>
+      <button type="submit">Start</button>
+    </div>
+  </form>
+</div>

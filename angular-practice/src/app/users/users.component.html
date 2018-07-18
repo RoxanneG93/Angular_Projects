@@ -1,0 +1,27 @@
+<h2>Users</h2>
+
+<!-- This IF checks users array to see if length is not empty -->
+<!-- ELSE Arg sets ng-template -->
+<!-- LOADED is the bool variable used to fetch -->
+<ul *ngIf="loaded && users.length > 0; else noUsers">
+  <!-- This For loop loops through users array in the ts file -->
+  <li *ngFor="let user of users">
+    <h3>{{ user.name }}</h3>
+    <!-- This ngIF is 'hiding' users with showExtend boolean set to false -->
+    <!-- Can add more to if statemtn like && to check if other statments are true -->
+    <!-- EX: *ngIf="showExtended && user.location; means it will display if location is true" -->
+    <ul *ngIf="showExtended && user.location">
+      <li>Age: {{ user.age }}</li>
+      <li>location: {{ user.location }}</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- #name sets the name of the template which the ngIF can call  -->
+<ng-template #noUsers>NO USERS FOUND</ng-template>
+
+<!-- This IF statment checks length of array and will dispaly if array is empty -->
+<h4 *ngIf="users.length == 0">No Users Found</h4>
+
+<!-- Setting loaded to false, good way to display loading graphic -->
+<h4 *ngIf="!loaded">Loading Users...</h4>

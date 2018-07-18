@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<!-- Getting Quiz to show up TimeStamp 1:01 -->
+<p>
+  The Quiz Questions + Answers
+</p>
+<!-- Actuall code used in tutorial -->
+<!-- <ul *ngFor="let option of quizService.questions[quizService.questProgress].options; let i = index;">
+  <li *ngIf="option != null" (click)="Answer(quizService.questions[questProgress].QnID, i"></li>
+</ul> -->
+<ul *ngFor="let option of quizService.questions; let i = index">
+  <h1>{{ option.name }}</h1>
+  <li>{{ option.options }}</li>
+  <input type="radio">
+</ul>
+
+<!-- (click)="Answer(quizService.questions[questProgress]" -->
+<app-result></app-result>

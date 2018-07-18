@@ -1,0 +1,51 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <h2>Type here, foo</h2>
+<input (keyup.enter)="createTodo()" [(ngModel)]="todoInput" type="text">
+<button (click)="createTodo()">Create Todo</button>
+<ul *ngFor="let todo of todos">
+    <li>{{ todos }}</li>
+    <span><button (click)="editTodo(todo)">Edit</button></span>
+    <span><button (click)="deleteTodo(todo)">Delete</button></span>
+  </ul>
+
+
+<table>
+
+</table> -->
+  <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>My Todo List...I did this all on my own </h1>
+          <h4>(No help what's so ever...)</h4>
+     
+          <div class="input-group mb-3">
+              <input [(ngModel)]="todoInput" type="text" class="form-control"
+              (keyup.enter)= "createTodo()"
+              placeholder="what do you need to do today?"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2">
+              
+              <div class="input-group-append">
+                <button (click)="createTodo()"class="btn btn-outline-secondary" type="button">+</button>
+              </div>
+          </div>
+          <table class="table table-dark">
+              <thead>
+       
+              </thead>
+              <tbody>
+                <tr *ngFor="let todo of todos">
+                  <td (click)="checkOffTodo()" >{{ todo.name }}</td>
+                  <td class="text-right"><button (click)
+                    ="editTodo()" class="btn
+                    ">Edit</button></td>
+                    <td class="text-right">
+                      <button class="btn btn-danger" (click)
+                      ="deleteTodo(todo)">Delete</button>
+                    </td>
+                    <!-- WAY 2 -->
+                    <input [(ngModel)]="todo.isChecked" type="text">
+                </tr>
+              </tbody>
+            </table>
+
